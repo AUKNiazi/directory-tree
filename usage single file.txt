@@ -1,0 +1,76 @@
+How to Use This Complete File:
+1. Save the File
+Save the entire code above as directory_tree_generator.py
+
+2. Command Line Usage
+
+# Basic help
+python directory_tree_generator.py --help
+
+# Generate basic tree of current directory
+python directory_tree_generator.py .
+
+# Generate tree with depth limit
+python directory_tree_generator.py /home/user/projects -d 3
+
+# Generate detailed tree with hidden files
+python directory_tree_generator.py . -f detailed -a -o mytree.txt
+
+# Export as JSON
+python directory_tree_generator.py . -f json -o data.json
+
+# Export as XML
+python directory_tree_generator.py . -f xml -o data.xml
+
+# Rich colorful tree
+python directory_tree_generator.py . -f rich -o colorful_tree.txt
+
+3. Import and Use in Python Scripts
+
+# Import specific functions
+from directory_tree_generator import generate_directory_tree
+from directory_tree_generator import save_tree_json
+
+# Use the functions
+generate_directory_tree(".", "my_tree.txt", max_depth=3)
+save_tree_json("/home/user", "home_directory.json")
+
+# Or import everything
+from directory_tree_generator import *
+
+# Quick functions
+quick_tree(".", "simple_tree.txt")
+analyze_project("/path/to/project")
+
+4. Interactive Mode
+Run without arguments for interactive mode:
+python directory_tree_generator.py
+
+You'll be prompted for:
+
+Directory to analyze
+
+Output format
+
+Filename
+
+5. Key Features of This Complete File:
+All 5 methods in one file
+
+Command line interface with rich help
+
+Interactive mode for easy use
+
+Error handling for permissions and missing directories
+
+Multiple output formats: basic, rich, detailed, JSON, XML
+
+Depth limiting for all methods
+
+Hidden file inclusion option
+
+File size calculations
+
+Automatic timestamp in outputs
+
+Utility functions for quick usage

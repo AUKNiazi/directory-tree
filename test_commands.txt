@@ -1,0 +1,29 @@
+# 1. Basic tree of current directory
+python directory_tree_generator.py . -o test_file
+
+# 2. See what files are created
+ls -la test_file*
+
+# 3. If it's empty, check the directory
+python directory_tree_generator.py /home/yourname -o test_file
+
+# 4. Force specific extension
+python directory_tree_generator.py . -o test_file.txt
+python directory_tree_generator.py . -f json -o test_file.json
+
+# 5. See what's in the file
+cat test_file.txt
+head -20 test_file.txt  # First 20 lines
+
+
+Check current directory contents:
+ls -la
+
+Verify the directory exists:
+pwd  # See where you are
+python -c "import os; print(os.listdir('.'))"
+
+Run with verbosity:
+# Add debug to see what's happening
+python directory_tree_generator.py . -o test_file --debug
+

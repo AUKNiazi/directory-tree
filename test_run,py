@@ -1,0 +1,40 @@
+# Save this as test_run.py and run it
+import os
+from pathlib import Path
+
+# Create a test directory with some files
+test_dir = "test_directory"
+os.makedirs(test_dir, exist_ok=True)
+
+# Create some test files
+with open(os.path.join(test_dir, "file1.txt"), "w") as f:
+    f.write("Hello World!\n")
+
+with open(os.path.join(test_dir, "file2.txt"), "w") as f:
+    f.write("Another file\n")
+
+# Create a subdirectory
+subdir = os.path.join(test_dir, "subfolder")
+os.makedirs(subdir, exist_ok=True)
+
+with open(os.path.join(subdir, "nested.txt"), "w") as f:
+    f.write("Nested file\n")
+
+print(f"✅ Created test directory: {test_dir}")
+
+# Now analyze it
+print(f"\n📊 Analyzing test directory...")
+from directory_tree_generator import generate_directory_tree
+generate_directory_tree(test_dir, "test_output.txt")
+
+# Show the output
+print(f"\n📄 Output file content:")
+print("-" * 40)
+with open("test_output.txt", "r") as f:
+    print(f.read())
+
+# Cleanup (optional)
+import shutil
+shutil.rmtree(test_dir)
+os.remove("test_output.txt")
+print(f"\n✅ Cleaned up test files")
