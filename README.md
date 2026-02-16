@@ -128,7 +128,7 @@ analyze_project("/path/to/project")
 directory_tree/
 ├── directory_tree_generator.py  # Main script with all 5 methods
 ├── requirements.txt             # Python dependencies
-├── README.md                     # This file
+├── README.md                    # This file
 ├── usage_single_file.txt        # Usage documentation
 ├── test_commands.txt            # Example test commands
 └── method1-5/                   # Individual method implementations
